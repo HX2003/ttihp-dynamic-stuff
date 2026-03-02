@@ -11,7 +11,7 @@ WE = 1 << 7
 @cocotb.test()
 async def test_sram(dut):
     dut._log.info("start")
-    clock = Clock(dut.clk, 10, units="us")
+    clock = Clock(dut.clk, 10, unit="us")
     cocotb.start_soon(clock.start())
 
     dut._log.info("ena")
@@ -108,7 +108,7 @@ async def test_sram(dut):
     assert int(dut.uo_out.value) == 0xbb
 
     dut._log.info("Switch to bank 8 and write a byte at addresses 10, 11")
-    dut.ui_in = BANKSEL
+    dut.ui_in.value = BANKSEL
     dut.uio_in.value = 8
     await ClockCycles(dut.clk, 1)
 
