@@ -82,8 +82,8 @@
   "//": "SRAM macro internals trigger massive DRC in Magic; skip (KLayout DRC also skipped)",
   "ERROR_ON_MAGIC_DRC": false,
 
-  "//": "SRAM macro LVS is known to fail (same issue as ttihp0p2)",
-  "ERROR_ON_LVS_ERROR": false,
+  "//": "Blackbox SRAM macros during SPICE extraction for LVS, as the macros are not LVS clean",
+  "MAGIC_EXT_ABSTRACT_CELLS": ["RM_IHPSG13_.*"],
 
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
