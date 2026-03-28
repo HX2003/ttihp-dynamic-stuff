@@ -42,7 +42,7 @@
       },
       "gds": [
         "dir::../macro/dynamic_shift_reg_june_test.gds"
-      ]
+      ],
       "nl": [
         "dir::./dynamic_shift_reg_june_test.v"
       ]
