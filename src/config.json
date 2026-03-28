@@ -55,8 +55,7 @@
     "dynamicshiftreginst VPWR VGND VDD VSS"
   ],
   
-  "FP_PDN_HORIZONTAL_HALO": 5,
-  "FP_PDN_VERTICAL_HALO": 5,
+  "PL_MACRO_HALO": "5 5",
   
   "//": "Custom PDN config",
   "PDN_CFG": "dir::pdn_cfg.tcl",
