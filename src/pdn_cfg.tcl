@@ -15,7 +15,7 @@ set_voltage_domain -name CORE -power $::env(VDD_NET) -ground $::env(GND_NET)
 # 2. Define a "dummy" macro grid 
 # We need this because 'add_pdn_connect' must be associated with a grid name.
 # We don't add any stripes to it; it just serves as a container for the connection rule.
-define_pdn_grid -macro -default -name macro_stitch
+define_pdn_grid -macro -default -name macro_stitch -voltage_domains {CORE}
 
 # 3. The Only Functional Command: Drop Vias
 # This will automatically place Via3 anywhere Metal 3 (pins) and Metal 4 (stripes) overlap.
