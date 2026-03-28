@@ -6,10 +6,6 @@
 `default_nettype none
 
 module tt_um_hx2003_dynamic_test (
-`ifdef USE_POWER_PINS
-    input VPWR,
-    input VGND,
-`endif
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -52,10 +48,6 @@ module tt_um_hx2003_dynamic_test (
   (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf9( .A(Q1), .X(q1_buffered) );
  	
   dynamic_shift_reg_june_test dynamicshiftreginst (
-  `ifdef USE_POWER_PINS
-      .VDD(VPWR),
-      .VSS(VGND),
-  `endif
       .D0(D0_BUFFERED),
       .D1(D1_BUFFERED),
       .Q0(Q0),
