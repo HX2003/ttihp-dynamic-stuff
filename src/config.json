@@ -52,9 +52,6 @@
     }
   },
   
-  "//": "Custom GDS has no PR boundary layer; read full GDS instead of blackbox",
-  "MAGIC_MACRO_STD_CELL_SOURCE": "PDK",
-  
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
