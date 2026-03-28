@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_urish_sram_test (
+module tt_um_hx2003_dynamic_test (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -18,42 +18,50 @@ module tt_um_urish_sram_test (
 
   assign uio_oe  = 8'b0;  // All bidirectional IOs are inputs
   assign uio_out = 8'b0;
+  
+  assign d0 = ui_in[0];
+  assign d1 = ui_in[1];
+  assign clkb = ui_in[3];
+  assign clka = ui_in[2];
+  assign clkb = ui_in[3];
+  
+  assign uo_out = {6'b0, q1_buffered, q0_buffered};
+  
+  wire D0_BUFFERED;
+  wire D1_BUFFERED;
+  wire q0_buffered;
+  wire q1_buffered;
+ 	
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf0( .A(clka), .Y(A0) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf1( .A(clka), .Y(A1) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf2( .A(clka), .Y(A2) );
+  
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf3( .A(clkb), .Y(B0) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf4( .A(clkb), .Y(B1) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf5( .A(clkb), .Y(B2) );
 
-  wire       wen = ui_in[7];
-  wire       bank_select = ui_in[6];
-  wire [5:0] addr_low = ui_in[5:0];
-  reg  [3:0] addr_high_reg;
-  wire [3:0] addr_high_in = uio_in[3:0];
-  wire [9:0] addr = {bank_select ? addr_high_in : addr_high_reg, addr_low};
-
-  always @(posedge clk) begin
-    if (~rst_n) begin
-      addr_high_reg <= 0;
-    end else begin
-      if (bank_select) begin
-        addr_high_reg <= addr_high_in;
-      end
-    end
-  end
-
-  RM_IHPSG13_1P_1024x8_c2_bm_bist sram (
-      .A_CLK(clk),
-      .A_MEN(rst_n),
-      .A_WEN(wen && !bank_select),
-      .A_REN(~wen),
-      .A_ADDR(addr),
-      .A_DIN(uio_in),
-      .A_DLY(1'b1),
-      .A_DOUT(uo_out),
-      .A_BM(8'b11111111),
-      .A_BIST_CLK(1'b0),
-      .A_BIST_EN(1'b0),
-      .A_BIST_MEN(1'b0),
-      .A_BIST_WEN(1'b0),
-      .A_BIST_REN(1'b0),
-      .A_BIST_ADDR(10'b0),
-      .A_BIST_DIN(8'b0),
-      .A_BIST_BM(8'b0)
+  
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf6( .A(d0), .Y(D0_BUFFERED) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf7( .A(d1), .Y(D1_BUFFERED) );
+  
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf8( .A(Q0), .Y(q0_buffered) );
+  (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf9( .A(Q1), .Y(q1_buffered) );
+ 	
+  dynamic_shift_reg_june_test dynamicshiftreginst (
+  `ifdef USE_POWER_PINS
+      .VDD(VPWR),
+      .VSS(VGND),
+  `endif
+      .D0(D0_BUFFERED),
+      .D1(D1_BUFFERED),
+      .Q0(Q0),
+      .Q1(Q1),
+      .A0(A0),
+      .B0(B0),
+      .A1(A1),
+      .B1(B1),
+      .A2(A2),
+      .B2(B2)
   );
 
 endmodule
