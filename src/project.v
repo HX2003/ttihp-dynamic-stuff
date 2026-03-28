@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Uri Shkaed
+ * Copyright (c) 2026 HX2003
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -19,17 +19,17 @@ module tt_um_hx2003_dynamic_test (
   assign uio_oe  = 8'b0;  // All bidirectional IOs are inputs
   assign uio_out = 8'b0;
   
-  assign wire d0 = ui_in[0];
-  assign wire d1 = ui_in[1];
-  assign wire clka = ui_in[2];
-  assign wire clkb = ui_in[3];
+  wire d0 = ui_in[0];
+  wire d1 = ui_in[1];
+  wire clka = ui_in[2];
+  wire clkb = ui_in[3];
   
   assign uo_out = {6'b0, q1_buffered, q0_buffered};
   
-  wire D0_BUFFERED;
-  wire D1_BUFFERED;
-  wire q0_buffered;
-  wire q1_buffered;
+  wire A0, A1, A2;
+  wire B0, B1, B2;
+  wire Q0, Q1;
+  wire q0_buffered, q1_buffered;
  	
   (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf0( .A(clka), .Y(A0) );
   (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf1( .A(clka), .Y(A1) );
