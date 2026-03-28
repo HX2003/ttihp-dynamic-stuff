@@ -3,7 +3,7 @@ module dynamic_shift_reg_june_test (
     input VDD,
     input VSS,
 `endif
-    input D0
+    input D0,
     input D1,
     output Q0,
     output Q1,
