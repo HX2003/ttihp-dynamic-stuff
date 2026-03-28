@@ -106,5 +106,6 @@
   
   "QUIT_ON_LVS_ERROR": false,
   "QUIT_ON_DRC_ERROR": false,
-  "QUIT_ON_MAGIC_DRC": false
+  "QUIT_ON_MAGIC_DRC": false,
+  "QUIT_ON_ILLEGAL_OVERLAPS": false
 }
