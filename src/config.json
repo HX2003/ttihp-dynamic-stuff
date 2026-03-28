@@ -52,7 +52,7 @@
     }
   },
   "PDN_MACRO_CONNECTIONS": [
-    "dynamic_shift_reg_june_test VPWR VGND VDD VSS"
+    "dynamicshiftreginst VPWR VGND VDD VSS"
   ],
   
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
