@@ -30,6 +30,7 @@ module tt_um_hx2003_dynamic_test (
   wire B0, B1, B2;
   wire Q0, Q1;
   wire q0_buffered, q1_buffered;
+  wire D0_BUFFERED, D1_BUFFERED;
  	
   (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf0( .A(clka), .Y(A0) );
   (* keep *)(* dont_touch = "true" *) sg13g2_buf_1 extrabuf1( .A(clka), .Y(A1) );
