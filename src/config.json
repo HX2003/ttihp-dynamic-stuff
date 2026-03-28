@@ -55,9 +55,8 @@
     "dynamicshiftreginst VPWR VGND VDD VSS"
   ],
   
-  "//": "Temporaily blackbox macros during SPICE extraction for LVS, as the macros are not LVS clean",
-  "MAGIC_EXT_ABSTRACT_CELLS": ["dynamic_shift_reg_june_test.*"],
-  
+  "FP_PDN_HORIZONTAL_HALO": 5,
+  "FP_PDN_VERTICAL_HALO": 5,
   
   "//": "Custom PDN config",
   "PDN_CFG": "dir::pdn_cfg.tcl",
