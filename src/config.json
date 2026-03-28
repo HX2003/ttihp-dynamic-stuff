@@ -56,7 +56,7 @@
   ],
   
   "//": "Temporaily blackbox macros during SPICE extraction for LVS, as the macros are not LVS clean",
-  "MAGIC_EXT_ABSTRACT_CELLS": ["RM_IHPSG13CMOS5L_.*"],
+  "MAGIC_EXT_ABSTRACT_CELLS": ["dynamic_shift_reg_june_test.*"],
   
   
   "//": "Custom PDN config",
