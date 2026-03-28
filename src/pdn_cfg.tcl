@@ -59,7 +59,7 @@ if { $::env(PDN_ENABLE_RAILS) == 1 } {
         -layers "$::env(PDN_RAIL_LAYER) $::env(PDN_VERTICAL_LAYER)"
 }
 
-# SRAM macro grid: connect Metal3 (macro power pins) to TopMetal4 (PDN stripes)
+# SRAM macro grid: connect Metal3 (macro power pins) to Metal4 (PDN stripes)
 define_pdn_grid \
     -macro \
     -default \

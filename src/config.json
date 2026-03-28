@@ -55,6 +55,10 @@
     "dynamicshiftreginst VPWR VGND VDD VSS"
   ],
   
+  "//": "Temporaily blackbox macros during SPICE extraction for LVS, as the macros are not LVS clean",
+  "MAGIC_EXT_ABSTRACT_CELLS": ["RM_IHPSG13CMOS5L_.*"],
+  
+  
   "//": "Custom PDN config",
   "PDN_CFG": "dir::pdn_cfg.tcl",
   
