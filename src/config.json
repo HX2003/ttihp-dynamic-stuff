@@ -36,7 +36,7 @@
     "dynamic_shift_reg_june_test": {
       "instances": {
         "dynamicshiftreginst": {
-          "location": [30, 30],
+          "location": [45, 45],
           "orientation": "N"
         }
       },
