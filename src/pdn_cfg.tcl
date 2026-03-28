@@ -5,3 +5,11 @@
 source $::env(SCRIPTS_DIR)/openroad/common/set_global_connections.tcl
 set_global_connections
 
+# 2. Define a "dummy" macro grid 
+# We need this because 'add_pdn_connect' must be associated with a grid name.
+# We don't add any stripes to it; it just serves as a container for the connection rule.
+define_pdn_grid -macro -default -name macro_stitch
+
+# 3. The Only Functional Command: Drop Vias
+# This will automatically place Via3 anywhere Metal 3 (pins) and Metal 4 (stripes) overlap.
+add_pdn_connect -grid macro_stitch -layers "Metal3 Metal4"
