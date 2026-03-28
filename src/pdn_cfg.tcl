@@ -10,6 +10,8 @@ set_global_connections
 add_global_connection -net $::env(VDD_NET) -pin_pattern {^VPWR$} -power
 add_global_connection -net $::env(GND_NET) -pin_pattern {^VGND$} -ground
 
+set_voltage_domain -name CORE -power $::env(VDD_NET) -ground $::env(GND_NET)
+
 # 2. Define a "dummy" macro grid 
 # We need this because 'add_pdn_connect' must be associated with a grid name.
 # We don't add any stripes to it; it just serves as a container for the connection rule.
