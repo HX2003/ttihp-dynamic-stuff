@@ -36,7 +36,7 @@
     "dynamic_shift_reg_june_test": {
       "instances": {
         "dynamicshiftreginst": {
-          "location": [45, 45],
+          "location": [30, 30],
           "orientation": "N"
         }
       },
@@ -84,9 +84,6 @@
 
   "//": "Clock",
   "RUN_CTS": 1,
-
-  "//": "Don't generate power rings",
-  "FP_PDN_MULTILAYER": 0,
 
   "//": "MAGIC_DEF_LABELS may cause issues with LVS",
   "MAGIC_DEF_LABELS": 0,
