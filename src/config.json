@@ -51,7 +51,10 @@
       ]
     }
   },
-
+  
+  "//": "Custom GDS has no PR boundary layer; read full GDS instead of blackbox",
+  "MAGIC_MACRO_STD_CELL_SOURCE": "PDK",
+  
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
@@ -84,6 +87,9 @@
 
   "//": "Clock",
   "RUN_CTS": 1,
+  
+  "//": "Don't generate power rings",
+  "FP_PDN_MULTILAYER": 0,
 
   "//": "MAGIC_DEF_LABELS may cause issues with LVS",
   "MAGIC_DEF_LABELS": 0,
