@@ -32,20 +32,20 @@ module tt_um_hx2003_dynamic_test (
   wire q0_buffered, q1_buffered;
   wire D0_BUFFERED, D1_BUFFERED;
  	
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf0( .A(clka), .Y(A0) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf1( .A(clka), .Y(A1) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf2( .A(clka), .Y(A2) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf0( .A(clka), .X(A0) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf1( .A(clka), .X(A1) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf2( .A(clka), .X(A2) );
   
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf3( .A(clkb), .Y(B0) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf4( .A(clkb), .Y(B1) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf5( .A(clkb), .Y(B2) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf3( .A(clkb), .X(B0) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf4( .A(clkb), .X(B1) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf5( .A(clkb), .X(B2) );
 
   
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf6( .A(d0), .Y(D0_BUFFERED) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf7( .A(d1), .Y(D1_BUFFERED) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf6( .A(d0), .X(D0_BUFFERED) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf7( .A(d1), .X(D1_BUFFERED) );
   
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf8( .A(Q0), .Y(q0_buffered) );
-  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf9( .A(Q1), .Y(q1_buffered) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf8( .A(Q0), .X(q0_buffered) );
+  (* keep *)(* dont_touch = "true" *) sg13cmos5l_buf_1 extrabuf9( .A(Q1), .X(q1_buffered) );
  	
   dynamic_shift_reg_june_test dynamicshiftreginst (
   `ifdef USE_POWER_PINS
