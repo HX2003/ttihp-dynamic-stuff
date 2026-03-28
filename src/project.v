@@ -19,11 +19,10 @@ module tt_um_hx2003_dynamic_test (
   assign uio_oe  = 8'b0;  // All bidirectional IOs are inputs
   assign uio_out = 8'b0;
   
-  assign d0 = ui_in[0];
-  assign d1 = ui_in[1];
-  assign clkb = ui_in[3];
-  assign clka = ui_in[2];
-  assign clkb = ui_in[3];
+  assign wire d0 = ui_in[0];
+  assign wire d1 = ui_in[1];
+  assign wire clka = ui_in[2];
+  assign wire clkb = ui_in[3];
   
   assign uo_out = {6'b0, q1_buffered, q0_buffered};
   
