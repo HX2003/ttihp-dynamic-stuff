@@ -55,6 +55,9 @@
     "dynamicshiftreginst VPWR VGND VDD VSS"
   ],
   
+  "//": "Custom PDN config",
+  "PDN_CFG": "dir::pdn_cfg.tcl",
+  
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
